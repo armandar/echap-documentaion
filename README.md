@@ -10,7 +10,7 @@
 </div>
 
 ## Login
-### ورود
+#### ورود
 
 <div dir=rtl>
 برای ارسال درخواست ورود باید به لینک زیر درخواست بزنید.
@@ -94,7 +94,7 @@
 
 
 ## Authorization
-### احراز هویت
+#### احراز هویت
 
 <div dir="rtl">
 در قسمت هایی از API که نیاز به تایید هویت کاربر وجود دارد باید مقدار زیر به هدر اضافه شود:
@@ -140,7 +140,7 @@
 
 
 ## Register
-### ثبت نام
+#### ثبت نام
 ### /register
 #### method: post
 
@@ -191,7 +191,7 @@
 ```
 
 ## Generate Header Menu
-### ایجاد منوی بالای صفحه
+#### ایجاد منوی بالای صفحه
 ### /shared/generateheadermenu
 #### method: get
 <div dir="rtl">
@@ -230,7 +230,8 @@
 ]
 ```
 
-## Generate Main Search Menu, ایجاد منوی جستجوی اصلی
+## Generate Main Search Menu
+#### ایجاد منوی جستجوی اصلی
 ### /shared/generatemainsearchmenu
 #### method: get
 <div dir="rtl">
@@ -280,7 +281,8 @@
 }
 ```
 
-## Users - Get List, کاربران - دریافت لیست
+## Users - Get List
+#### کاربران - دریافت لیست
 ### /users/get/{userType}/{page?}
 #### method: get
 
@@ -343,7 +345,8 @@
 }
 ```
 
-## Users - Get User Type List, دریافت نوع های حساب کاربری
+## Users - Get User Type List
+#### دریافت نوع های حساب کاربری
 ### /users/getallavailableusertypes
 #### method: get
 
@@ -388,7 +391,8 @@
 ]
 ```
 
-## Users - Get User Status List, دریفات لیست انواع وضعیت های حساب
+## Users - Get User Status List
+#### دریفات لیست انواع وضعیت های حساب
 ### /users/getallavailableusertypes
 #### method: get
 
@@ -413,7 +417,8 @@
 ]
 ```
 
-## Users - Search, جستوی کاربر
+## Users - Search
+#### جستوی کاربر
 ### /users/search
 #### method: get
 
@@ -461,7 +466,8 @@
 
 <br>
 
-## User - Get, دریافت کاربر
+## User - Get
+#### دریافت کاربر
 ### /users/get/{id}
 #### method: get
 
@@ -500,7 +506,8 @@
 </div>
 
 
-## Edit, ویرایش کاربر
+## Edit
+#### ویرایش کاربر
 ### /users/edit/{id}
 #### method: post
 
