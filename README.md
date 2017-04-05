@@ -1,4 +1,4 @@
-# Api Reference
+# Echap Api Reference
 <div dir=rtl>
 در مستند زیر می‌توانید نحوه استفاده از api پروژه Echap را مشاهده و از آن استفاده نمایید.
 </div>
@@ -9,15 +9,13 @@
 <div dir=ltr><b>http://echap.ir/api</b></div>
 </div>
 
-# Getting Started
-
 ## Login, ورود
 
 <div dir=rtl>
 برای ارسال درخواست ورود باید به لینک زیر درخواست بزنید.
 </div>
 
-### /login 
+### /login
 #### method: post
 
 <div dir="rtl">
@@ -94,7 +92,7 @@
 </div>
 
 
-## Authorization
+## Authorization, احراز هویت
 
 <div dir="rtl">
 در قسمت هایی از API که نیاز به تایید هویت کاربر وجود دارد باید مقدار زیر به هدر اضافه شود:
@@ -184,7 +182,7 @@
 }
 ```
 
-## GenerateHeaderMenu
+## Generate Header Menu, ایجاد منوی بالای صفحه
 ### /shared/generateheadermenu
 #### method: get
 <div dir="rtl">
@@ -223,7 +221,7 @@
 ]
 ```
 
-## GenerateMainSearchMenu
+## Generate Main Search Menu, ایجاد منوی جستجوی اصلی
 ### /shared/generatemainsearchmenu
 #### method: get
 <div dir="rtl">
@@ -381,7 +379,7 @@
 ]
 ```
 
-# Users - Get User Status List
+# Users - Get User Status List, دریفات لیست انواع وضعیت های حساب
 ### /users/getallavailableusertypes
 #### method: get
 
@@ -406,7 +404,7 @@
 ]
 ```
 
-# Users - Search
+# Users - Search, جستوی کاربر
 ### /users/search
 #### method: get
 
