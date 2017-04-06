@@ -631,9 +631,8 @@
 ```
 
 ## Search and Order
-### جستجو و سفارش
 
-### Advanced Product Search
+### - Advanced Product Search
 #### جستجوی پیشرفته بین محصولات
 #### /search/advanced
 ##### method: get
