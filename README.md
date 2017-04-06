@@ -443,6 +443,102 @@
 به جز فیلد password باقی فیلد ها ضروری هستند و حتما باید ارسال شوند. در صورت خالی بودن فیلد password، کلمه عبور کاربر تغییر نمی کند.
 </div>
 
+
+### - Delete [[`admin`]]
+#### حذف کاربر
+#### /users/delete/{id}
+##### method: post
+
+<div dir="rtl">
+با استفاده از این متود، امکان حذف حساب کاربران فراهم میشود. این متود یک پارامتر در URL دریافت می کند که عبارت است از id کاربر مورد نظر.
+<br><br>
+<b>توجه کنید که حتما باید مثل متود Edit اطلاعات پروفایل کاربر هم به سرور ارسال شود.</b>
+</div>
+
+###### id:
+<div dir=rtl>id کاربر مورد نظر</div>
+
+### - Upload Avatar [[`admin`]]
+#### آپلود آواتار
+#### /users/uploadavatar/{id}
+##### method: post
+
+<div dir="rtl">
+این متود با دریافت id کاربر در URL و همچنین یک عکس با فرمت های JPG و PNG آواتار کاربر را تعیین می کند.
+</div>
+
+###### id:
+<div dir=rtl>id کاربر مورد نظر</div>
+
+<div dir=rtl>
+توجه کنید که فیلد عکس فرستاده شده به سمت سیستم باید در فرم دارای نام avatar باشد.
+<br><br>
+نمونه پاسخ سرور:
+</div>
+
+```json
+{
+    "success": true,
+    "userId": 5,
+    "avatarFullPath": "http://example.com/path/to/file/54ff8864d1f9671d156ff65e49075499.png"
+}
+```
+
+### - Add Address [[`admin`, currentUser]]
+#### اضافه کردن آدرس
+#### /users/addaddress/{userId}
+##### method: get
+
+<div dir="rtl">
+برای اضافه کردن آدرس به پروفایل کاربر از این متود استفاده کنید. اطلاعات آدرس حاوی نام آدرس و متن باید به صورت query string به URL اضافه شوند.
+<br><br>
+
+##### نمونه درخواست ارسالی به سرور:
+</div>
+
+```bash
+/users/addaddress?Title=محل کار&Text=آدرس کامل در این قسمت
+```
+
+###### userId:
+<div dir=rtl>id کاربر مورد نظر</div>
+
+<div dir=rtl>
+<br>
+نمونه پاسخ سرور در حالت خطا:
+</div>
+
+```json
+{
+    "success": false,
+    "error": "تمامی فیلد ها باید پر شوند."
+}
+```
+
+### - Delete Address [[`admin`, currentUser]]
+#### حذف آدرس
+#### /users/deleteaddress/{userId}
+##### method: get
+
+<div dir="rtl">
+برای حذف یک آدرس از پروفایل کاربر باید تمام اطلاعات مرتبط با آدرس را که در اختیار دارید مثل id و عنوان و متن آدرس را در قالب query string به این متود ارسال کنید.
+<br><br>
+
+##### نمونه درخواست ارسالی به سرور:
+</div>
+
+```bash
+/users/addaddress?Id=4&Title=محل کار&Text=آدرس کامل در این قسمت
+```
+
+###### userId:
+<div dir=rtl>id کاربر مورد نظر</div>
+
+<div dir=rtl>
+<br>
+پاسخ سرور مشابه متود Add Address خواهد بود.
+</div>
+
 ### - Generate Header Menu
 #### ایجاد منوی بالای صفحه
 #### /shared/generateheadermenu
