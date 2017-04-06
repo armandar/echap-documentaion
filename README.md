@@ -9,15 +9,57 @@
 <div dir=ltr><b>http://echap.ir/api</b></div>
 </div>
 
-## Login
-#### ورود
+## Authorization
+### احراز هویت
 
-<div dir=rtl>
-برای ارسال درخواست ورود باید به لینک زیر درخواست بزنید.
+<div dir="rtl">
+در قسمت هایی از API که نیاز به تایید هویت کاربر وجود دارد باید مقدار زیر به هدر اضافه شود:
 </div>
 
-### /login
-#### method: post
+
+```json
+{
+    "AuthToken": "user_token_here"
+}
+```
+
+
+<div dir="rtl">
+مقدار این عبارت به هنگام ورود کاربر به سیستم تحویل داده می شود.
+</div>
+
+<br>
+<div dir="rtl">
+درصورتی که این هدر را نفرستید یا مقدار آن اشتباه باشد با خطایی مشابه زیر موجه خواهید شد.
+</div>
+
+```json
+{
+    "success": false,
+    "status": 401,
+    "error": "Unauthorized. No AuthToken was provided."
+}
+```
+
+<div dir=rtl>
+در صورت اشتباه بودن یا منقضی شدن توکن خطایی مانند زیر میگیرید:
+</div>
+
+```json
+{
+    "success": false,
+    "status": 401,
+    "error": "Unauthorized. AuthToken is expired or restricted access."
+}
+```
+
+## User Management
+
+### Login
+#### ورود
+
+#### /login
+##### method: post
 
 <div dir="rtl">
 و موارد زیر را به هدر  درخواست خود اضافه نمایید.(Header)
@@ -93,56 +135,10 @@
 </div>
 
 
-## Authorization
-#### احراز هویت
-
-<div dir="rtl">
-در قسمت هایی از API که نیاز به تایید هویت کاربر وجود دارد باید مقدار زیر به هدر اضافه شود:
-</div>
-
-
-```json
-{
-    "AuthToken": "user_token_here"
-}
-```
-
-
-<div dir="rtl">
-مقدار این عبارت به هنگام ورود کاربر به سیستم تحویل داده می شود.
-</div>
-
-<br>
-<div dir="rtl">
-درصورتی که این هدر را نفرستید یا مقدار آن اشتباه باشد با خطایی مشابه زیر موجه خواهید شد.
-</div>
-
-```json
-{
-    "success": false,
-    "status": 401,
-    "error": "Unauthorized. No AuthToken was provided."
-}
-```
-
-<div dir=rtl>
-در صورت اشتباه بودن یا منقضی شدن توکن خطایی مانند زیر میگیرید:
-</div>
-
-```json
-{
-    "success": false,
-    "status": 401,
-    "error": "Unauthorized. AuthToken is expired or restricted access."
-}
-```
-
-
-
-## Register
+### Register
 #### ثبت نام
-### /register
-#### method: post
+#### /register
+##### method: post
 
 
 <div dir="rtl">
@@ -190,113 +186,22 @@
 }
 ```
 
-## Generate Header Menu
-#### ایجاد منوی بالای صفحه
-### /shared/generateheadermenu
-#### method: get
-<div dir="rtl">
-جهت دریافت منوی بالای صفحه، شامل دسته بندی ها،سرویس های آن ها و عکس های مربوط، از این بخش استفاده کنید.
-</div>
-
-```json
-[
-    {
-        "id": 1,
-        "category": "کارت ویزیت",
-        "category_en": null,
-        "categoryicon": "http://example.com/assets/images/icons/cat-1.png",
-        "services": [
-            {
-                "id": 32,
-                "servicename": "سلفون مات",
-                "service_en": "hardcover-opaque",
-                "servicephoto": "http://example.com/path/to/file/1.jpg"
-            },
-            {
-                "id": 31,
-                "servicename": "سلفون براق",
-                "service_en": null,
-                "servicephoto": "http://example.com/path/to/file/2.jpg"
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "category": "اداری",
-        "category_en": null,
-        "categoryicon": "http://example.com/assets/images/icons/cat-2.png",
-        "services": []
-    }
-]
-```
-
-## Generate Main Search Menu
-#### ایجاد منوی جستجوی اصلی
-### /shared/generatemainsearchmenu
-#### method: get
-<div dir="rtl">
-جهت دریافت اطلاعات منوی جستجو در صفحه اصلی برنامه شامل سرویس ها، شهر ها، و محلات از این بخش استفاده کنید.
-</div>
-
-```json
-{
-    "categoryAndServices": [
-        {
-            "serviceId": 2,
-            "serviceTitle": "گلاسه UV",
-            "categoryId": 1,
-            "categoryTitle": "کارت ویزیت"
-        },
-        {
-            "serviceId": 3,
-            "serviceTitle": "PVC 300 میکرون",
-            "categoryId": 1,
-            "categoryTitle": "کارت ویزیت"
-        }
-    ],
-    "cities": [
-        {
-            "id": 1,
-            "name": "تهران",
-            "slug": "tehran",
-            "areas": [
-                {
-                    "id": 1,
-                    "name": "آجودانیه",
-                    "slug": null
-                },
-                {
-                    "id": 2,
-                    "name": "خرمشهر",
-                    "slug": null
-                },
-                {
-                    "id": 3,
-                    "name": "خواجه نصیر طوسی",
-                    "slug": null
-                }
-            ]
-        }
-    ]
-}
-```
-
-## Users - Get List
+### Get List
 #### کاربران - دریافت لیست
-### /users/get/{userType}/{page?}
-#### method: get
+#### /users/get/{userType}/{page?}
+##### method: get
 
 <div dir="rtl">
 جهت نمایش گیج‌های ابتدای برنامه از این بخش استفاده کنید.
 </div>
 
-##### userType (required)
+###### userType (required)
 
 <div dir="rtl">
 این پارامتر ضروری نوع کاربران برگشتی را مشخص میکند. باید یک رشته با حروف لاتین باشد. مثل: press, normal, broker
 </div>
 
-##### page
+###### page
 
 <div dir="rtl">
 این پارامتر مشخص می کند که صفحه چندم از لیست برگردانده شود.
@@ -345,10 +250,10 @@
 }
 ```
 
-## Users - Get User Type List
+### Get User Type List
 #### دریافت نوع های حساب کاربری
-### /users/getallavailableusertypes
-#### method: get
+#### /users/getallavailableusertypes
+##### method: get
 
 <div dir="rtl">
 لیستی از تمام انواع کاربران که سیستم پشتیبانی میکند، برمیگرداند.
@@ -391,10 +296,10 @@
 ]
 ```
 
-## Users - Get User Status List
-#### دریفات لیست انواع وضعیت های حساب
-### /users/getallavailableusertypes
-#### method: get
+### Get User Status List
+#### دریافت لیست انواع وضعیت های حساب
+#### /users/getallavailableusertypes
+##### method: get
 
 <div dir="rtl">
 لیستی از تمام وضعیت های ممکن هر حساب کاربری برمیگرداند.
@@ -417,10 +322,10 @@
 ]
 ```
 
-## Users - Search
+### Search
 #### جستوی کاربر
-### /users/search
-#### method: get
+#### /users/search
+##### method: get
 
 <div dir=rtl>
 با استفاده از این متود می توان بین تمام کاربران جستجو کرد و نتیجه را به صورت صفحه بندی شده دریافت کرد.
@@ -466,10 +371,10 @@
 
 <br>
 
-## User - Get
+### Get
 #### دریافت کاربر
-### /users/get/{id}
-#### method: get
+#### /users/get/{id}
+##### method: get
 
 <div dir="rtl">
 این متود مشخصات یک کاربر خاص که با پارامتر id مشخص شده است را بر میگرداند.
@@ -506,16 +411,130 @@
 </div>
 
 
-## Edit
+### Edit [[`admin`]]
 #### ویرایش کاربر
-### /users/edit/{id}
-#### method: post
+#### /users/edit/{id}
+##### method: post
 
 <div dir="rtl">
-با استفاده از این متود، امکان ایجاد تغییرات در پروفایل کاربران فراهم میشود. این متود تنها یک پارامتر دریافت می کند که عبارت است از id کاربر مورد نظر.
+با استفاده از این متود، امکان ایجاد تغییرات در پروفایل کاربران فراهم میشود. این متود یک پارامتر در URL دریافت می کند که عبارت است از id کاربر مورد نظر.
 </div>
 
-id:
+###### id:
+<div dir=rtl>id کاربر مورد نظر</div>
+<br>
+<div dir=rtl>
+نمونه اطلاعات ارسال شده به سرور:
+</div>
+
+```json
+{
+    "firstName": "تست",
+    "lastName": "تستر پور",
+    "email": "tester@gmail.com",
+    "phoneNumber": "09013269565",
+    "password": null,
+    "userStatus": "نیازمند تایید",
+    "userType": "عادی"
+}
+```
+
+<div dir=rtl>
+به جز فیلد password باقی فیلد ها ضروری هستند و حتما باید ارسال شوند. در صورت خالی بودن فیلد password، کلمه عبور کاربر تغییر نمی کند.
+</div>
+
+### Generate Header Menu
+#### ایجاد منوی بالای صفحه
+#### /shared/generateheadermenu
+##### method: get
+<div dir="rtl">
+جهت دریافت منوی بالای صفحه، شامل دسته بندی ها،سرویس های آن ها و عکس های مربوط، از این بخش استفاده کنید.
+</div>
+
+```json
+[
+    {
+        "id": 1,
+        "category": "کارت ویزیت",
+        "category_en": null,
+        "categoryicon": "http://example.com/assets/images/icons/cat-1.png",
+        "services": [
+            {
+                "id": 32,
+                "servicename": "سلفون مات",
+                "service_en": "hardcover-opaque",
+                "servicephoto": "http://example.com/path/to/file/1.jpg"
+            },
+            {
+                "id": 31,
+                "servicename": "سلفون براق",
+                "service_en": null,
+                "servicephoto": "http://example.com/path/to/file/2.jpg"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "category": "اداری",
+        "category_en": null,
+        "categoryicon": "http://example.com/assets/images/icons/cat-2.png",
+        "services": []
+    }
+]
+```
+
+### Generate Main Search Menu
+#### ایجاد منوی جستجوی اصلی
+#### /shared/generatemainsearchmenu
+##### method: get
+<div dir="rtl">
+جهت دریافت اطلاعات منوی جستجو در صفحه اصلی برنامه شامل سرویس ها، شهر ها، و محلات از این بخش استفاده کنید.
+</div>
+
+```json
+{
+    "categoryAndServices": [
+        {
+            "serviceId": 2,
+            "serviceTitle": "گلاسه UV",
+            "categoryId": 1,
+            "categoryTitle": "کارت ویزیت"
+        },
+        {
+            "serviceId": 3,
+            "serviceTitle": "PVC 300 میکرون",
+            "categoryId": 1,
+            "categoryTitle": "کارت ویزیت"
+        }
+    ],
+    "cities": [
+        {
+            "id": 1,
+            "name": "تهران",
+            "slug": "tehran",
+            "areas": [
+                {
+                    "id": 1,
+                    "name": "آجودانیه",
+                    "slug": null
+                },
+                {
+                    "id": 2,
+                    "name": "خرمشهر",
+                    "slug": null
+                },
+                {
+                    "id": 3,
+                    "name": "خواجه نصیر طوسی",
+                    "slug": null
+                }
+            ]
+        }
+    ]
+}
+```
+
+
 
 ## limit (optional) {gauges-v2}
 
