@@ -1,4 +1,4 @@
-# Api Reference
+# API Reference
 <div dir=rtl>
 در مستند زیر می‌توانید نحوه استفاده از API پروژه Echap را مشاهده و از آن استفاده نمایید.
 </div>
@@ -723,9 +723,9 @@ sortBy=recommended
 ]
 ```
 
-### - Cancel Order
+### - Cancel Order [[`admin`, currentUser]]
 #### لغو سفارش
-#### /order/cancelorder/{orderid}
+#### /order/cancelorder/{orderId}
 ##### method: get
 
 <div dir="rtl">
