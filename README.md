@@ -741,3 +741,39 @@ sortBy=recommended
 
 ###### orderId:
 <div dir=rtl>id سفارش مورد نظر</div>
+
+### - Upload Artwork [[`admin`, currentUser]]
+#### آپلود طرح برای چاپ
+#### /users/uploadartwork/{artworkType}
+##### method: post
+
+<div dir="rtl">
+برای آپلود طرح برای یک سفارش باید از این متد استفاده کرد. این متد فقط یک پارامتر دریافت می کند که مشخص کننده نوع (سمت) طرح است.
+</div>
+
+###### artworkType:
+<div dir=rtl>نوع (سمت) طرح. مقادیر ممکن برای این پارامتر front و back می باشند.</div>
+
+<div dir=rtl>
+توجه کنید که این متد هیچ وابستگی به سفارش ندارد و فقط وظیفه دریافت و ایجاد فایل ارسالی را در سمت سرور دارد.
+<br><br>
+نمونه پاسخ سرور در حالت عملیات موفق:
+</div>
+
+```json
+{
+    "success": true,
+    "fileName": "52343245435_sd6fsd56f7fsf7_front.png",
+    "type": "front"
+}
+```
+<div dir=rtl>
+نمونه پاسخ سرور در حالت شکست عملیات:
+</div>
+
+```json
+{
+    "success": false,
+    "error": "فایلی آپلود نشده است."
+}
+```
