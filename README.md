@@ -4,9 +4,13 @@
 </div>
 
 <div dir=rtl>
-توجه کنید که باید به ابتدای تمام آدرس ها عبارت زیر اضافه شود:
 
+- توجه کنید که باید به ابتدای تمام آدرس ها عبارت زیر اضافه شود:
 <div dir=ltr><b>http://echap.ir/api</b></div>
+
+- علامت [[]] در روبروی برخی از متود ها به معنی اعمال محدودیت دسترسی می باشد. مثلا [[currentUser]] به معنی آن است که به طور پیش فرض این متد فقط برای کاربرانی قابل دسترسی است که وارد سیستم شده باشند.
+
+- حساب کاربری admin **همیشه** به **تمام** متد ها دسترسی دارد و به همین خاطر اسم آن جلوی متد ها قرار داده نشده است.
 </div>
 
 ## Authorization
@@ -411,7 +415,7 @@
 </div>
 
 
-### - Edit [[`admin`]]
+### - Edit [[]]
 #### ویرایش کاربر
 #### /users/edit/{id}
 ##### method: post
@@ -444,7 +448,7 @@
 </div>
 
 
-### - Delete [[`admin`]]
+### - Delete [[]]
 #### حذف کاربر
 #### /users/delete/{id}
 ##### method: post
@@ -458,7 +462,7 @@
 ###### id:
 <div dir=rtl>id کاربر مورد نظر</div>
 
-### - Upload Avatar [[`admin`]]
+### - Upload Avatar [[]]
 #### آپلود آواتار
 #### /users/uploadavatar/{id}
 ##### method: post
@@ -484,7 +488,7 @@
 }
 ```
 
-### - Add Address [[`admin`, currentUser]]
+### - Add Address [[currentUser]]
 #### اضافه کردن آدرس
 #### /users/addaddress/{userId}
 ##### method: get
@@ -515,7 +519,7 @@
 }
 ```
 
-### - Delete Address [[`admin`, currentUser]]
+### - Delete Address [[currentUser]]
 #### حذف آدرس
 #### /users/deleteaddress/{userId}
 ##### method: get
@@ -723,7 +727,7 @@ sortBy=recommended
 ]
 ```
 
-### - Cancel Order [[`admin`, currentUser]]
+### - Cancel Order [[currentUser]]
 #### لغو سفارش
 #### /order/cancelorder/{orderId}
 ##### method: get
@@ -742,7 +746,7 @@ sortBy=recommended
 ###### orderId:
 <div dir=rtl>id سفارش مورد نظر</div>
 
-### - Upload Artwork [[`admin`, currentUser]]
+### - Upload Artwork [[currentUser]]
 #### آپلود طرح برای چاپ
 #### /users/uploadartwork/{artworkType}
 ##### method: post
