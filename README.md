@@ -722,3 +722,22 @@ sortBy=recommended
     }
 ]
 ```
+
+### - Cancel Order
+#### لغو سفارش
+#### /order/cancelorder/{orderid}
+##### method: get
+
+<div dir="rtl">
+این متود وضعیت یک سفارش را به لغو شده تغییر می دهد. فقط قابل دسترسی برای admin و کاربری که سفارش را ثبت کرده است می باشد.
+<br><br>
+
+##### نمونه درخواست ارسالی به سرور:
+</div>
+
+```bash
+/search/advanced?service=کارت ویزیت - گلاسه معمولی&city=تهران&area=مدنی&coating=1&corners=undefined&printedSide=undefined&folding=undefined&printsize=2&quantity=1&groomet=undefined&color=undefined&sortBy=undefined
+```
+
+###### orderId:
+<div dir=rtl>id سفارش مورد نظر</div>
