@@ -539,8 +539,8 @@
 پاسخ سرور مشابه متود Add Address خواهد بود.
 </div>
 
-### - Generate Header Menu
-#### ایجاد منوی بالای صفحه
+## Generate Header Menu
+### ایجاد منوی بالای صفحه
 #### /shared/generateheadermenu
 ##### method: get
 <div dir="rtl">
@@ -579,8 +579,8 @@
 ]
 ```
 
-### - Generate Main Search Menu
-#### ایجاد منوی جستجوی اصلی
+## Generate Main Search Menu
+### ایجاد منوی جستجوی اصلی
 #### /shared/generatemainsearchmenu
 ##### method: get
 <div dir="rtl">
@@ -628,4 +628,98 @@
         }
     ]
 }
+```
+
+## Search and Order
+### جستجو و سفارش
+
+### Advanced Product Search
+#### جستجوی پیشرفته بین محصولات
+#### /search/advanced
+##### method: get
+<div dir="rtl">
+این متود امکان جستجو بین محصولات موجود در سیستم را به همراه مشخص کردن پارامتر های مختلف می دهد. تمام پارامتر ها باید بصورت query string به URL اضافه شوند.
+<br><br>
+
+##### نمونه درخواست ارسالی به سرور:
+</div>
+
+```bash
+/search/advanced?service=کارت ویزیت - گلاسه معمولی&city=تهران&area=مدنی&coating=1&corners=undefined&printedSide=undefined&folding=undefined&printsize=2&quantity=1&groomet=undefined&color=undefined&sortBy=undefined
+```
+
+<div dir=rtl>
+امکان مرتب سازی/فیلتر نتایج براساس پارامتر هم وجود دارد. کافیست نام آن پارامتر را به عنوان مقدار عبارت زیر به query string جستجو اضافه کنید:
+</div>
+
+```bash
+sortBy=recommended
+```
+
+<div dir=rtl>
+پاسخ سرور عبارت است از آرایه ای از press ها که هر کدام از اجزای این آرایه حاوی اطلاعات کامل آن press و سرویس های قابل ارایه و ... است:
+</div>
+
+```json
+[
+    {
+        "pressId": 4,
+        "pressName": "تدبیر",
+        "pressLogo": "http://example.com/path/to/file/press_default.jpg",
+        "pressRate": 5,
+        "pressSampleImage": null,
+        "pressRecommended": false,
+        "pressArea": "مدنی از امام علی تا امام حسین",
+        "pressGeoLocation": {
+            "latitude": 35.714392058909,
+            "longitude": 51.46107673645,
+            "zoomLevel": 0,
+            "geoLocationType": 1
+        },
+        "averagePrice": 0,
+        "averageTurnAround": 0,
+        "pressExtraFeatures": [
+            {
+                "id": 2,
+                "title": "ماشین آلات مدرن",
+                "description": null,
+                "slug": null,
+                "image": null,
+                "enabled": true,
+                "showOrder": 1,
+                "press": null
+            }
+        ],
+        "pressDatasList": [
+            {
+                "id": 1,
+                "coatingId": 1,
+                "printSizeId": 1,
+                "quantityId": 1,
+                "printedSideId": null,
+                "cornerId": null,
+                "colorId": null,
+                "foldingId": null,
+                "groometId": null,
+                "turnAround": 3,
+                "cost": 50000,
+                "pressService": null
+            },
+            {
+                "id": 2,
+                "coatingId": 1,
+                "printSizeId": 1,
+                "quantityId": 1,
+                "printedSideId": null,
+                "cornerId": null,
+                "colorId": null,
+                "foldingId": null,
+                "groometId": null,
+                "turnAround": 5,
+                "cost": 30000,
+                "pressService": null
+            }
+        ]
+    }
+]
 ```
