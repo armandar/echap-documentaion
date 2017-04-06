@@ -746,42 +746,6 @@ sortBy=recommended
 ###### orderId:
 <div dir=rtl>id سفارش مورد نظر</div>
 
-### - Upload Artwork [[currentUser]]
-#### آپلود طرح برای چاپ
-#### /users/uploadartwork/{artworkType}
-##### method: post
-
-<div dir="rtl">
-برای آپلود طرح برای یک سفارش باید از این متد استفاده کرد. این متد فقط یک پارامتر دریافت می کند که مشخص کننده نوع (سمت) طرح است.
-</div>
-
-###### artworkType:
-<div dir=rtl>نوع (سمت) طرح. مقادیر ممکن برای این پارامتر front و back می باشند.</div>
-
-<div dir=rtl>
-توجه کنید که این متد هیچ وابستگی به سفارش ندارد و فقط وظیفه دریافت و ایجاد فایل ارسالی را در سمت سرور دارد.
-<br><br>
-نمونه پاسخ سرور در حالت عملیات موفق:
-</div>
-
-```json
-{
-    "success": true,
-    "fileName": "52343245435_sd6fsd56f7fsf7_front.png",
-    "type": "front"
-}
-```
-<div dir=rtl>
-نمونه پاسخ سرور در حالت شکست عملیات:
-</div>
-
-```json
-{
-    "success": false,
-    "error": "فایلی آپلود نشده است."
-}
-```
-
 ### - Submit Order
 #### ثبت سفارش
 #### /order/submit
@@ -815,3 +779,70 @@ sortBy=recommended
 <div dir=rtl>
 orderId باید از این پاسخ در جایی نگه داری شود تا در مرحله بعدی برای ارسال فایل های طرح چاپ از آن استفاده شود.
 </div>
+
+
+### - Get Artwork Sides
+#### دریافت لیست بخش های مختلف فایل های طرح چاپ
+#### /order/getartworksides/{serviceId}
+##### method: get
+
+<div dir="rtl">
+این متد یک پارامتر دریافت می کند که همان کد سرویس مورد نظر است. دلیل آن هم این است که سرویس های متفاوت ممکن است احتیاج به فایل های متفاتی برای سمت های مختلف خود داشته باشند.
+با استفاده از پاسخ این متود می توان جاهای مناسب را برای آپلود فایل در UI در نظر گرفت.
+<br><br>
+نمونه پاسخ سرور:
+</div>
+
+```json
+[
+    {
+        "id": 258869892,
+        "title": "صفحه رو",
+        "isRequired": true
+    },
+    {
+        "id": 861089016,
+        "title": "صفحه پشت",
+        "isRequired": false
+    }
+]
+```
+
+### - Upload Artwork [[currentUser]]
+#### آپلود طرح برای چاپ
+#### /order/uploadartwork/{orderId}/{artworkSideId}
+##### method: post
+
+<div dir="rtl">
+برای آپلود طرح برای یک سفارش باید از این متد استفاده کرد. توجه کنید که name فایل در فرم آپلود باید artwork باشد.
+</div>
+
+###### orderId:
+<div dir=rtl>کد سفارش که در مرحله قبلی توسط سیستم ایجاد شد.</div>
+
+###### artworkSideId:
+<div dir=rtl>کد سمت فایل طرح چاپ که با استفاده از متود GetArtworkSides لیستی از آن ها قابل دریافت است.</div>
+
+<div dir=rtl>
+در سمت سرور انجام این عملیات باعث ایجاد فایل و همچنین به روز شدن سفارش با اضافه شدن این فایل میشود.
+<br><br>
+نمونه پاسخ سرور در حالت عملیات موفق:
+</div>
+
+```json
+{
+    "success": true,
+    "orderId": 2,
+    "fileName": "52343245435_sd6fsd56f7fsf7_front.png",
+}
+```
+<div dir=rtl>
+نمونه پاسخ سرور در حالت شکست عملیات:
+</div>
+
+```json
+{
+    "success": false,
+    "error": "فایلی آپلود نشده است."
+}
+```
