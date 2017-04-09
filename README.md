@@ -847,8 +847,52 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
 }
 ```
 
-## Submit comment and rate Press
-### ثبت دیدگاه و امتیاز برای چاپخانه
+## Press
+
+### - Get full press details by name
+#### دریافت اطلاعات کامل چاپخانه با استفاده از نام
+
+#### /presses/getbyname/{pressName}
+##### method: get
+
+<div dir=rtl>نمونه پاسخ سرور:</div>
+
+```json
+{
+    "success": true,
+    "press": {
+        "id": 4,
+        "name": "تدبیر",
+        "description": "این مجموعه با بیش از ۱۰ سال سابقه و با استفاده از جدیدترین تجهیزات، آماده خدمت رسانی به سازمان ها و شرکت ها می باشد.",
+        "address": "تهران - زرتشت غربی - خ کامبیز - پ ۷",
+        "landLine": null,
+        "email": "tadbir@gmail.com",
+        "logo": null,
+        "rate": 2,
+        "recommended": false,
+        "geoLocation": {
+            "latitude": 35.714392058909,
+            "longitude": 51.46107673645,
+            "zoomLevel": 0,
+            "geoLocationType": 1
+        },
+        "user": null,
+        "userId": 0,
+        "area": null,
+        "averageTurnAround": 2,
+        "pressExtraFeatures": [
+            {
+                "id": 2,
+                "title": "ماشین آلات مدرن"
+            }
+        ],
+        "enabledFrom": "0001-01-01T00:00:00"
+    }
+}
+```
+
+### Submit comment and rate Press
+#### ثبت دیدگاه و امتیاز برای چاپخانه
 #### /presses/submitcomment
 ##### method: post
 <div dir="rtl">
@@ -867,16 +911,22 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
 }
 ```
 
-## Get Press comments list
-### دریافت لیست دیدگاه های چاپخانه
+### Get Press comments list
+#### دریافت لیست دیدگاه های چاپخانه
 #### /presses/getcomments/{pressId}
 ##### method: get
 <div dir="rtl">
 این متد می تواند برای ثبت دیدگاه و امتیاز برای یک چاپخانه مورد استفاده قرار بگیرد. این متود فقط برای کاربرانی که وارد سیستم شده اند، قابل دسترسی است.
 <br><br>
-نمونه پاسخ سرور:
 </div>
 
+###### pressId:
+<div dir=rtl>id چاپخانه مورد نظر</div>
+
+<div dir=rtl>
+<br>
+نمونه پاسخ سرور:
+</div>
 
 
 ```json
@@ -893,7 +943,7 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
         "text": "متاسفانه زمان تحویل بیشتر از حد معمول بود.",
         "rate": 2,
         "userFullName": "جان دو",
-        "createdAt": "2017-04-09T14:30:31.3180278"
+        "createdAt": "2017-04-10T14:30:31.3180278"
     },
     {
         "id": 3,
@@ -904,6 +954,3 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
     }
 ]
 ```
-
-###### pressId:
-<div dir=rtl>id چاپخانه مورد نظر</div>
