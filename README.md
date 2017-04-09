@@ -851,9 +851,12 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
 
 ### - Get full press details by name
 #### دریافت اطلاعات کامل چاپخانه با استفاده از نام
-
 #### /presses/getbyname/{pressName}
 ##### method: get
+
+###### pressName:
+<div dir=rtl>اسم چاپخانه مورد نظر</div>
+<br>
 
 <div dir=rtl>نمونه پاسخ سرور:</div>
 
@@ -891,7 +894,57 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
 }
 ```
 
-### Submit comment and rate Press
+### - Get basic press details by id
+#### دریافت اطلاعات اصلی چاپخانه با استفاده از id
+#### /presses/getbyid/{pressId}
+##### method: get
+
+<div dir=rtl>
+این متود بیشتر جهت بارگذاری لیست چاپخانه ها قابل استفاده است. به جز پارامتر های ضروری بقیه پارامتر های غیر لازم null هستند.
+<br><br>
+</div>
+
+###### pressId:
+<div dir=rtl>id چاپخانه مورد نظر</div>
+<br>
+
+<div dir=rtl>نمونه پاسخ سرور:</div>
+
+```json
+{
+    "success": true,
+    "press": {
+        "id": 4,
+        "name": "تدبیر",
+        "description": "این مجموعه با بیش از ۱۰ سال سابقه و با استفاده از جدیدترین تجهیزات، آماده خدمت رسانی به سازمان ها و شرکت ها می باشد.",
+        "address": "تهران - زرتشت غربی - خ کامبیز - پ ۷",
+        "landLine": null,
+        "email": "tadbir@gmail.com",
+        "logo": null,
+        "rate": 2,
+        "recommended": false,
+        "geoLocation": {
+            "latitude": 35.714392058909,
+            "longitude": 51.46107673645,
+            "zoomLevel": 0,
+            "geoLocationType": 1
+        },
+        "user": null,
+        "userId": 0,
+        "area": null,
+        "averageTurnAround": 2,
+        "pressExtraFeatures": [
+            {
+                "id": 2,
+                "title": "ماشین آلات مدرن"
+            }
+        ],
+        "enabledFrom": "0001-01-01T00:00:00"
+    }
+}
+```
+
+### Submit comment and rate Press [[currentUser]]
 #### ثبت دیدگاه و امتیاز برای چاپخانه
 #### /presses/submitcomment
 ##### method: post
