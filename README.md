@@ -634,6 +634,68 @@
 }
 ```
 
+## Generate user dashboard menu [[currentUser]]
+### ایجاد منوی داشبورد کاربر
+#### /shared/generatedashboardmenu
+##### method: get
+<div dir="rtl">
+با توجه به اینکه آیتم های داخل منوی داشبورد اصلی ممکن است با توجه به نوع کاربر وارد شده به سیستم متفاوت باشد، از این متود 
+برای دریافت جزییات آیتم های مخصوص کاربر وارد شده به سیستم استفاده می شود.
+</div>
+
+```json
+[
+    {
+        "title": "داشبورد",
+        "router": "/dashboard/home",
+        "icon": "dashboard"
+    },
+    {
+        "title": "کاربران",
+        "router": "/dashboard/users",
+        "icon": "account_box",
+        "children": [
+            {
+                "title": "عادی",
+                "router": "/dashboard/users?filter=normal"
+            },
+            {
+                "title": "چاپخانه",
+                "router": "/dashboard/users?filter=press"
+            },
+            {
+                "title": "کارگزار",
+                "router": "/dashboard/users?filter=broker"
+            },
+            {
+                "title": "دفتر فنی",
+                "router": "/dashboard/users?filter=technical_office"
+            }
+        ]
+    },
+    {
+        "title": "چاپخانه ها",
+        "router": "/dashboard/presses",
+        "icon": "print"
+    },
+    {
+        "title": "راهنما",
+        "router": "/dashboard/help",
+        "icon": "help"
+    },
+    {
+        "title": "حساب کاربری",
+        "router": "/dashboard/profile",
+        "icon": "account_box"
+    },
+    {
+        "title": "خروج",
+        "router": "/dashboard/logout",
+        "icon": "account_box"
+    }
+]
+```
+
 ## Search and Order
 
 ### - Advanced Product Search
