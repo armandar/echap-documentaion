@@ -852,6 +852,69 @@ sortBy=recommended
 }
 ```
 
+### - Get Order by id [[currentUser]]
+#### دریافت اطلاعات کامل یک سفارش
+#### /order/getbyid/{id}
+##### method: get
+
+<div dir="rtl">
+این متود اطلاعات کامل مربوط به یک سفارش را بر میگرداند. فقط قابل دسترسی برای کاربر ثبت کننده و ادمین می باشد.
+<br><br>
+
+###### id:
+<div dir=rtl>id سفارش مورد نظر</div>
+
+##### نمونه پاسخ سرور:
+</div>
+
+```json
+{
+  "success": true,
+  "order": {
+    "id": 2,
+    "isPaid": false,
+    "date": "2017-05-03T00:00:00",
+    "status": "سبد خرید",
+    "pressDataCost": 50000,
+    "pressDataTurnAround": 3,
+    "user": {
+      "id": 1,
+      "fullName": "وحید امیری مطلق",
+      "email": "vahid.a1996@gmail.com",
+      "phoneNumber": "09013269565"
+    },
+    "press": {
+      "id": 4,
+      "name": "تدبیر",
+      "logo": null,
+      "userId": null,
+      "userFullName": null
+    },
+    "attachments": [
+      {
+        "id": 2,
+        "name": "4353453275984.png"
+      }
+    ],
+    "pressData": {
+      "serviceId": 2,
+      "serviceTitle": "گلاسه UV"
+    },
+    "orderMessaging": [
+      {
+        "id": 1,
+        "userId": 1,
+        "userFullName": "وحید امیری مطلق",
+        "userEmail": "vahid.a1996@gmail.com",
+        "userPhoneNumber": "09013269565",
+        "comment": "لطفا به دقت انجام شود.",
+        "date": "2016-05-16T00:00:00"
+      }
+    ]
+  }
+}
+```
+
 ### - Cancel Order [[currentUser]]
 #### لغو سفارش
 #### /order/cancelorder/{orderId}
