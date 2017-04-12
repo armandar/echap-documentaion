@@ -822,7 +822,7 @@ sortBy=recommended
             "status": "سبد خرید",
             "date": "2017-05-03T00:00:00",
             "pressId": 4,
-            "pressName": "تدبیر"
+            "pressName": "تدبیر",
             "pressDataCost": 50000,
             "pressDataTurnAround": 3,
             "attachments": null,
@@ -839,7 +839,7 @@ sortBy=recommended
             "status": "در حال بررسی",
             "date": "2016-08-14T00:00:00",
             "pressId": 12,
-            "pressName": "آذین چاپ"
+            "pressName": "آذین چاپ",
             "pressDataCost": 35000,
             "pressDataTurnAround": 1,
             "attachments": null,
