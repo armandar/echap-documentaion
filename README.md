@@ -1204,3 +1204,33 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
     }
 ]
 ```
+
+## Invoice
+
+### - Generate invoice
+#### صدور فاکتور
+#### /invoice/generate
+##### method: post
+
+<div dir=rtl>
+این متود با دریافت یک سری اطلاعات در مورد اضافات سفارش، فاکتور نهایی را صادر یا به روز می کند. پس از صدور فاکتور، آن را بر میگرداند.
+<br><br>
+نمونه اطلاعات ارسالی:
+</div>
+
+```json
+{
+    "pressCheck": false,
+    "designCheck": true,
+    "deliveryCheck": false,
+    "deliveryType": "ایچاپ",
+    "inputAddress": "تهران - زرتشت غربی - خ کامبیز (نوری) پ ۱۶",
+    "orderIds": [1,2]
+}
+```
+
+<br>
+
+```json
+
+```
