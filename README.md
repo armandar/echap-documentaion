@@ -744,7 +744,7 @@ sortBy=recommended
             "geoLocationType": 1
         },
         "serviceId": 4,
-        "serviceName": "کارت ویزیت"
+        "serviceName": "کارت ویزیت",
         "averagePrice": 0,
         "averageTurnAround": 0,
         "pressExtraFeatures": [
