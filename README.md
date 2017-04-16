@@ -743,6 +743,8 @@ sortBy=recommended
             "zoomLevel": 0,
             "geoLocationType": 1
         },
+        "serviceId": 4,
+        "serviceName": "کارت ویزیت"
         "averagePrice": 0,
         "averageTurnAround": 0,
         "pressExtraFeatures": [
