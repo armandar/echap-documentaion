@@ -929,6 +929,65 @@ sortBy=recommended
 }
 ```
 
+### - Get for Invoice [[currentUser]]
+#### دریافت اطلاعات کامل یک سفارش
+#### /order/getforinvoice/{invoiceId}
+##### method: get
+
+<div dir="rtl">
+با استفاده از این متد می توان تمام سفارش های مرتبط با یک فاکتور را به صورت یک لیست دریافت کرد.
+<br><br>
+</div>
+
+###### invoiceId:
+<div>id فاکتور مورد نظر</div>
+
+<div dir=rtl>
+
+##### نمونه پاسخ سرور:
+</div>
+
+```json
+{
+    "success": true,
+    "orders": [
+        {
+            "id": 2,
+            "status": "سبد خرید",
+            "date": "2017-05-03T00:00:00",
+            "pressId": 4,
+            "pressName": "تدبیر",
+            "pressDataCost": 50000,
+            "pressDataTurnAround": 3,
+            "attachments": null,
+            "userId": 1,
+            "userFullName": "وحید امیری مطلق",
+            "pressData": {
+                "serviceId": 2,
+                "serviceTitle": "گلاسه UV"
+            }
+        },
+        {
+            "id": 3,
+            "status": "در حال بررسی",
+            "date": "2016-08-14T00:00:00",
+            "pressId": 12,
+            "pressName": "آذین چاپ",
+            "pressDataCost": 35000,
+            "pressDataTurnAround": 1,
+            "attachments": null,
+            "userId": 1,
+            "userFullName": "وحید امیری مطلق",
+            "pressData": {
+                "serviceId": 2,
+                "serviceTitle": "گلاسه UV"
+            }
+        }
+    ],
+    "allCount": 2
+}
+```
+
 ### - Cancel Order [[currentUser]]
 #### لغو سفارش
 #### /order/cancelorder/{orderId}
