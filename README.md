@@ -794,9 +794,9 @@ sortBy=recommended
 ]
 ```
 
-### - Order list [[currentUser]]
+### - Get Orders list [[currentUser]]
 #### لیست سفارش ها
-#### /order/get/{page}
+#### /order/get/{orderStatus}/{page}
 ##### method: get
 
 <div dir="rtl">
@@ -807,8 +807,14 @@ sortBy=recommended
 <br>
 </div>
 
+###### orderStatus (required)
+<div dir="rtl">
+این پارامتر در صورتی که مقدارش برابر all باش، سفارش ها را صرف نظر از وضعیت بر میگرداند.
+در صورت تمایل برای نمایش فقط سفارش هایی در وضعیت خاص، باید نام فارسی آن وضعیت را ارسال کنید. مثل "سبد خرید"
+</div>
+
 ###### page:
-<div>صفحه درخواست</div>
+<div dir=rtl>صفحه درخواست</div>
 
 <br>
 <div dir=rtl>
@@ -834,8 +840,7 @@ sortBy=recommended
             "pressData": {
                 "serviceId": 2,
                 "serviceTitle": "گلاسه UV"
-            },
-            "isPaid": false
+            }
         },
         {
             "id": 3,
@@ -851,8 +856,7 @@ sortBy=recommended
             "pressData": {
                 "serviceId": 2,
                 "serviceTitle": "گلاسه UV"
-            },
-            "isPaid": true
+            }
         }
     ],
     "allCount": 2
@@ -1046,7 +1050,7 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
 ### - Get shopping cart items list [[currentUser]]
 #### لیست آیتم های سبد خرید
 #### /order/getshoppingcartitems
-##### method: post
+##### method: get
 
 <div dir="rtl">
 با استفاده از این متود می توان لیستی از تمام سفارش های کاربر را که در وضعیت "سبد خرید" قرار دارند را، دریافت کرد.
