@@ -943,7 +943,7 @@ sortBy=recommended
 ###### orderId:
 <div dir=rtl>id سفارش مورد نظر</div>
 
-### - Submit Order
+### - Submit Order [[currentUser]]
 #### ثبت سفارش
 #### /order/submit
 ##### method: post
@@ -951,13 +951,11 @@ sortBy=recommended
 
 <div dir="rtl">
 این متود آرایه ای حاوی id های press data انتخابی کاربر را دریافت می کند و یک سفارش ثبت میکند.
-<br>
-<b>توجه: در نسخه فعلی سیستم فقط اولین عنصر آرایه ثبت می شود.</b>
 </div>
 
 ```json
 {
-    "pressDatasIds": [1],
+    "pressDatasIds": [1, 4],
 }
 ```
 
