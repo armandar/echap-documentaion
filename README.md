@@ -929,7 +929,7 @@ sortBy=recommended
 }
 ```
 
-### - Get for Invoice [[currentUser]]
+### - Get Orders for Invoice [[currentUser]]
 #### دریافت اطلاعات کامل یک سفارش
 #### /order/getforinvoice/{invoiceId}
 ##### method: get
