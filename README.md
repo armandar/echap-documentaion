@@ -104,6 +104,7 @@
             "avatar": "http://localhost:5000/app_data/users/avatars/user_default.png",
             "email": "john.doe@gmail.com",
             "emailConfirmed": false,
+            "credit": 15000,
             "token": "gsciQ9PQvCpoQUlotv3dM0HJgzDwR6%john.doe@gmail.com",
             "createdAt": "2017-04-05T22:16:00.9486642",
             "userType": {
@@ -230,9 +231,9 @@
             "emailConfirmed": false,
             "phoneNumberConfirmed": false,
             "userStatus": null,
+            "credit": 5000,
             "userType": "چاپخانه",
-            "createdAt": "2017-05-05T22:46:00.9486642",
-            "addresses": null
+            "createdAt": "2017-05-05T22:46:00.9486642"
         },
         {
             "id": 1,
@@ -245,9 +246,9 @@
             "emailConfirmed": false,
             "phoneNumberConfirmed": false,
             "userStatus": null,
+            "credit": 0,
             "userType": "عادی",
-            "createdAt": "2017-04-05T22:16:00.9486642",
-            "addresses": null
+            "createdAt": "2017-04-05T22:16:00.9486642"
         }
     ],
     "allCount": 2
@@ -394,13 +395,13 @@
         "firstName": "John",
         "lastName": "Doe",
         "email": "j.doe@gmail.com",
-        "phoneNumber": "09013869560",
-        "password": null,
-        "avatar": "http://example.com/path/to/file/user_default.png",
         "emailConfirmed": false,
+        "phoneNumber": "09013869560",
         "phoneNumberConfirmed": false,
-        "userStatus": "فعال",
         "userType": "عادی",
+        "userStatus": "فعال",
+        "creadit" 0,
+        "avatar": "http://example.com/path/to/file/user_default.png",
         "createdAt": "2017-04-05T22:16:00.9486642",
         "addresses": []
     }
