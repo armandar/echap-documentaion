@@ -1043,6 +1043,91 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
 }
 ```
 
+### - Get shopping cart items list [[currentUser]]
+#### لیست آیتم های سبد خرید
+#### /order/getshoppingcartitems
+##### method: post
+
+<div dir="rtl">
+با استفاده از این متود می توان لیستی از تمام سفارش های کاربر را که در وضعیت "سبد خرید" قرار دارند را، دریافت کرد.
+این متد از نظر زیرساخت کاملا مشابه متد Get orders list عمل میکند با این تفاوت که نتایجش براساس چاپخانه ها دسته بندی شده است.
+</div>
+
+<div dir=rtl>
+نمونه پاسخ سرور:
+</div>
+
+```json
+{
+    "success": true,
+    "orders": [
+        [
+            {
+                "id": 6,
+                "status": "سبد خرید",
+                "date": "2017-04-18T10:55:24.108269",
+                "pressId": 3,
+                "pressName": "البرز",
+                "pressDataCost": 80000,
+                "pressDataTurnAround": 2,
+                "attachments": null,
+                "userId": 1,
+                "userFullName": "وحید امیری مطلق",
+                "pressData": {
+                    "serviceId": 2,
+                    "serviceTitle": "گلاسه UV"
+                }
+            }
+        ],
+        [
+            {
+                "id": 5,
+                "status": "سبد خرید",
+                "date": "2017-04-18T10:55:18.5791974",
+                "pressId": 4,
+                "pressName": "تدبیر",
+                "pressDataCost": 50000,
+                "pressDataTurnAround": 3,
+                "attachments": null,
+                "userId": 1,
+                "userFullName": "وحید امیری مطلق",
+                "pressData": {
+                    "serviceId": 2,
+                    "serviceTitle": "گلاسه UV"
+                }
+            },
+            {
+                "id": 3,
+                "status": "سبد خرید",
+                "date": "2017-04-18T10:53:30.3792131",
+                "pressId": 4,
+                "pressName": "تدبیر",
+                "pressDataCost": 70000,
+                "pressDataTurnAround": 3,
+                "attachments": null,
+                "userId": 1,
+                "userFullName": "وحید امیری مطلق",
+                "pressData": {
+                    "serviceId": 3,
+                    "serviceTitle": "بروشور معمولی"
+                }
+            }
+        ]
+    ],
+    "allCount": 3
+}
+```
+<div dir=rtl>
+نمونه پاسخ سرور در حالت شکست عملیات:
+</div>
+
+```json
+{
+    "success": false,
+    "error": "فایلی آپلود نشده است."
+}
+```
+
 ## Press
 
 ### - Get full press details by name
