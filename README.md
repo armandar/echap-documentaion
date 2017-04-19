@@ -191,7 +191,7 @@
 }
 ```
 
-### - Get List
+### - Get List [[]]
 #### کاربران - دریافت لیست
 #### /users/get/{userType}/{page?}
 ##### method: get
@@ -376,7 +376,7 @@
 
 <br>
 
-### - Get
+### - Get[[currentUser]]
 #### دریافت کاربر
 #### /users/get/{id}
 ##### method: get
