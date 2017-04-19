@@ -242,7 +242,7 @@
             "email": "j.doe@gmail.com",
             "phoneNumber": "09013869560",
             "password": null,
-            "avatar": null,
+            "avatar": "http://localhost:5000/app_data/users/avatars/user_default.png",
             "emailConfirmed": false,
             "phoneNumberConfirmed": false,
             "userStatus": null,
