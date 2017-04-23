@@ -376,7 +376,7 @@
 
 <br>
 
-### - Get[[currentUser]]
+### - Get [[currentUser]]
 #### دریافت کاربر
 #### /users/get/{id}
 ##### method: get
