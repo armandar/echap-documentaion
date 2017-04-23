@@ -400,7 +400,7 @@
         "phoneNumberConfirmed": false,
         "userType": "عادی",
         "userStatus": "فعال",
-        "creadit" 0,
+        "creadit": 0,
         "avatar": "http://example.com/path/to/file/user_default.png",
         "createdAt": "2017-04-05T22:16:00.9486642",
         "addresses": []
