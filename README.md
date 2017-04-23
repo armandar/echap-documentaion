@@ -1106,6 +1106,25 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
 }
 ```
 
+### - Change order status [[]]
+#### تغییر وضعیت سفارش
+#### /order/changestatus
+##### method: post
+
+<div dir=rtl>
+این متود با دریافت id و وضعیت جدید سفارش، وضعیت سفارش را تغییر میدهد.
+فقط قابل دسترسی برای ادمین و هر چاپخانه برای سفارشات مربوط به خودش است.
+<br><br>
+نمونه اطلاعات ارسالی:
+</div>
+
+```json
+{
+    "id": 6,
+    "newStatus": "تایید نهایی"
+}
+```
+
 ### - Get shopping cart items list [[currentUser]]
 #### لیست آیتم های سبد خرید
 #### /order/getshoppingcartitems
@@ -1365,8 +1384,10 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
     "orderIds": [1,2]
 }
 ```
-
+<div dir=rtl>
 <br>
+نمونه پاسخ سرور:
+</div>
 
 ```json
 {
@@ -1405,5 +1426,24 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
     "userAddress": "آجودانیه",
     "pressName": "قوامین",
     "pressLogo": "http://example.com/path/to/press_default.png"
+}
+```
+
+### - Change invoice status [[]]
+#### تغییر وضعیت فاکتور
+#### /invoice/changestatus
+##### method: post
+
+<div dir=rtl>
+این متود با دریافت id و وضعیت جدید فاکتور، وضعیت فاکتور را تغییر میدهد.
+فقط قابل دسترسی برای ادمین است.
+<br><br>
+نمونه اطلاعات ارسالی:
+</div>
+
+```json
+{
+    "id": 4,
+    "newStatus": "ارسال شده"
 }
 ```
