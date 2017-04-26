@@ -1031,7 +1031,8 @@ sortBy=recommended
 {
     "success": true,
     "userId": 1,
-    "orderIds": [7, 8]
+    "orderIds": [7, 8],
+    "serviceIds": [2, 4]
 }
 ```
 
