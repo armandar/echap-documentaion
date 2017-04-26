@@ -1448,10 +1448,10 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
 }
 ```
 
-### - Get unpaid Invoice amount
+### - Get unpaid Invoice amount [[currentUser]]
 #### دریافت مقدار پرداخت نشده برای یک فاکتور
 #### /invoice/getunpaidinvoiceamount/{invoiceId}
-##### method: post
+##### method: get
 
 <div dir=rtl>
 این متود با دریافت کد فاکتور، اطلاعاتی از جمله مبلغ نهایی قابل پرداخت و مقدار باقی مانده را بر میگرداند.
@@ -1472,5 +1472,41 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
     "finalAmount": 130000,
     "unpaidAmount": 15000,
     "isCompleted": false
+}
+```
+
+## Payment
+
+### - Add to invoice [[currentUser]]
+#### اضافه کردن یک پرداخت به فاکتور
+#### /payment/addtoinvoice/
+##### method: get
+
+<div dir=rtl>
+این متود یک پرداخت را به یک فاکتور اضافه می کند. به این ترتیب این امکان وجود دارد که هر فاکتور توسط چندین روش مختلف و در زمان های متفاوت، کاملا پرداخت شود.
+</div>
+
+<div dir=rtl>
+نمونه درخواست:
+<br>
+</div>
+
+```json
+{
+    "invoiceId": 5,
+    "type": "پرداخت آنلاین",
+    "amount": 55000
+}
+```
+
+<div dir=rtl>
+<br>
+
+نمونه پاسخ سرور:
+</div>
+
+```json
+{
+    "success": true
 }
 ```
