@@ -1447,3 +1447,30 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
     "newStatus": "ارسال شده"
 }
 ```
+
+### - Get unpaid Invoice amount
+#### دریافت مقدار پرداخت نشده برای یک فاکتور
+#### /invoice/getunpaidinvoiceamount/{invoiceId}
+##### method: post
+
+<div dir=rtl>
+این متود با دریافت کد فاکتور، اطلاعاتی از جمله مبلغ نهایی قابل پرداخت و مقدار باقی مانده را بر میگرداند.
+</div>
+
+###### invoiceId:
+<div dir=rtl>کد فاکتور</div>
+
+<div dir=rtl>
+<br>
+
+نمونه پاسخ سرور:
+</div>
+
+```json
+{
+    "success": true,
+    "finalAmount": 130000,
+    "unpaidAmount": 15000,
+    "isCompleted": false
+}
+```
