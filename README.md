@@ -1510,3 +1510,36 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
     "success": true
 }
 ```
+
+### - Remove from invoice [[]]
+#### حذف یک پرداخت از فاکتور
+#### /payment/removefrominvoice/
+##### method: get
+
+<div dir=rtl>
+توسط این متود که فقط برای ادمین قابل دسترسی است، میتوان یک پرداخت را از یک فاکتور حذف کرد.
+</div>
+
+<div dir=rtl>
+نمونه درخواست:
+<br>
+</div>
+
+```json
+{
+    "invoiceId": 5,
+    "paymentId": 2
+}
+```
+
+<div dir=rtl>
+<br>
+
+نمونه پاسخ سرور:
+</div>
+
+```json
+{
+    "success": true
+}
+```
