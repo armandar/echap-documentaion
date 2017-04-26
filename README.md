@@ -21,7 +21,7 @@
 </div>
 
 
-```json
+```jsong
 {
     "AuthToken": "user_token_here"
 }
@@ -1428,6 +1428,59 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
     "pressLogo": "http://example.com/path/to/press_default.png"
 }
 ```
+
+
+### - Get By Id invoice  [[currentUser]]
+#### گرفتن فاکتور
+#### /invoice/getbyid/{invoiceId}
+##### method: get
+
+<div dir=rtl>
+<br>
+نمونه پاسخ سرور:
+</div>
+
+```json
+{
+    "success": true,
+    "invoiceId": 2,
+    "itemRows": [
+        {
+            "title": "کارت ویزیت - گلاسه UV",
+            "unitCost": 50,
+            "quantity": 1000,
+            "totalCost": 50000
+        },
+        {
+            "title": "کارت ویزیت - گلاسه UV",
+            "unitCost": 80,
+            "quantity": 1000,
+            "totalCost": 80000
+        },
+        {
+            "title": "هزینه نظارت بر سفارش",
+            "unitCost": 4000,
+            "quantity": 1,
+            "totalCost": 4000
+        },
+        {
+            "title": "هزینه پیک",
+            "unitCost": 3000,
+            "quantity": 1,
+            "totalCost": 3000
+        }
+    ],
+    "totalCost": 130000,
+    "totalTax": 12960,
+    "totalPayableAmount": 156960,
+    "userFullName": "وحید امیری مطلق",
+    "userAddress": "آجودانیه",
+    "pressName": "قوامین",
+    "pressLogo": "http://example.com/path/to/press_default.png"
+}
+```
+
+
 
 ### - Change invoice status [[]]
 #### تغییر وضعیت فاکتور
