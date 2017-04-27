@@ -1390,7 +1390,7 @@ profileAddress یک آی دی است.
     "deliveryCheck": false,
     "deliveryType": "ایچاپ",
     "inputAddress": "تهران - زرتشت غربی - خ کامبیز (نوری) پ ۱۶",
-    "profileAddress" null,
+    "profileAddress": null,
     "orderIds": [1,2]
 }
 ```
