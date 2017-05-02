@@ -1093,7 +1093,9 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
 {
     "success": true,
     "orderId": 2,
+    "attachmentId": 2,
     "fileName": "52343245435_sd6fsd56f7fsf7_front.png",
+    "filePath": "http://example.com/static/artworks/52343245435_sd6fsd56f7fsf7_front.png"
 }
 ```
 <div dir=rtl>
@@ -1105,6 +1107,74 @@ orderId باید از این پاسخ در جایی نگه داری شود تا 
     "success": false,
     "error": "فایلی آپلود نشده است."
 }
+```
+
+### - Remove Artwork [[currentUser]]
+#### حذف طرح
+#### /order/removeartwork/{orderId}/{attachmentId}
+##### method: post
+
+<div dir="rtl">
+این متود که فقط در زمانی که وضعیت سفارش سبد خرید است، قابل دسترسی است به کاربر ثبت کننده سفارش اجازه حذف فایل طرح را از سفارش میدهد.
+</div>
+
+###### orderId:
+<div dir=rtl>کد سفارش که در مرحله قبلی توسط سیستم ایجاد شد.</div>
+
+###### attachmentId:
+<div dir=rtl>آی دی یک طرح (ضمیمه) که توسط متود Upload Artwork برگردانده می شود.</div>
+
+<div dir=rtl>
+نمونه پاسخ سرور در حالت عملیات موفق:
+</div>
+
+```json
+{
+    "success": true
+}
+```
+<div dir=rtl>
+نمونه پاسخ سرور در حالت شکست عملیات:
+</div>
+
+```json
+{
+    "success": false,
+    "error": "امکان حذف طرح در این مرحله از سفارش وجود ندارد."
+}
+```
+
+### - Get Artworks [[currentUser]]
+#### دریافت لیست طرح های یک سفارش
+#### /order/getartworks/{orderId}
+##### method: get
+
+<div dir="rtl">
+این متد لیست تمام فایل های طرح ثبت شده برای یک سفارش را بر میگرداند.
+</div>
+
+###### orderId:
+<div dir=rtl>کد سفارش</div>
+
+<div dir=rtl>
+نمونه پاسخ سرور در حالت عملیات موفق:
+</div>
+
+```json
+[
+    {
+        "id": 3,
+        "artworkSideTitle": "پشت",
+        "fileName": "DSFSDFSDF___345435435.png",
+        "filePath": "http://example.com/static/artworks/DSFSDFSDF___345435435.png"
+    },
+    {
+        "id": 4,
+        "artworkSideTitle": "رو",
+        "fileName": "ogdfgfd____92347324723.jpg",
+        "filePath": "http://example.com/static/artworks/ogdfgfd____92347324723.jpg"
+    }
+]
 ```
 
 ### - Change order status [[currentUser]]
